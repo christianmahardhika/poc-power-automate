@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -14,6 +15,9 @@ func main() {
 			return err
 		}
 		fmt.Println(data)
+		log.Println(data)
+		c.SendStatus(200)
+		c.SendString("OK")
 		return nil
 	})
 	// health check
